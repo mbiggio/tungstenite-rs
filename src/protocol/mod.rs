@@ -108,6 +108,11 @@ impl<Stream> WebSocket<Stream> {
         }
     }
 
+    /// Returns the inner stream.
+    pub fn into_inner(self) -> Stream {
+        self.socket
+    }
+
     /// Returns a shared reference to the inner stream.
     pub fn get_ref(&self) -> &Stream {
         &self.socket
